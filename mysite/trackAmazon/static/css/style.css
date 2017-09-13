@@ -1,8 +1,9 @@
-/*body*/
-/*{*/
-    /*color: blue;*/
-/*}*/
-
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
 .navbar {
       margin-bottom: 0;
       border-radius: 0;
