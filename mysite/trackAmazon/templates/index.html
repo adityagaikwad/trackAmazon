@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<br xmlns:padding-left="http://www.w3.org/1999/xhtml" xmlns:padding-left="http://www.w3.org/1999/xhtml">
-	<br>
-
+	<br/>
+	<br/>
 	<form method="POST" action="">
 		{% csrf_token %}
 		<div class="input-group">
@@ -15,68 +14,55 @@
 		    </span>
 		</div>
 		{% for field in form.fields %}
-			<div>{{ field }}</div>
 			{% if field.errors %}
 				<div class="alert alert-danger">
-					{{ field.errors }
+					{{ field.errors }}
 				</div>
 			{% endif %}
 		{% endfor %}
 	</form>
-<br>
-<br>
+	<br>
+	<br>
 
-<div class="dataToSort"><!-- ngRepeat: itemId in trackedItems --><div ng-repeat="itemId in trackedItems" class="ng-scope">
-    <div container="" data-price="17880" data-title="Apple iPhone 5s (Silver, 16GB)" data-vendor="AMZN" data-drop="-381" item-id="B00FXLCG7G" item-details="" no-track="stopTrackingItemNL(itemId)"
-         render-graph="renderGraph(itemId, true)" alert-price="addOrUpdateAlert(itemId)" class="ng-isolate-scope" style="display: block;">
-        <div class="row">
-            <div class="col-md-2 itemImageBig">
-                <a href="/redirect?to=http%3A%2F%2Flinksredirect.com%3Fpub_id%3D4403CL4185%26url%3Dhttp%253A%252F%252Fwww.amazon.in%252Fdp%252FB00FXLCG7G" style="text-decoration:none;">
-                    <img ng-src="http://ecx.images-amazon.com/images/I/41L3k5QtE3L._SL160_.jpg" src="http://ecx.images-amazon.com/images/I/41L3k5QtE3L._SL160_.jpg">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <b>
-                    <a href="/redirect?to=http%3A%2F%2Flinksredirect.com%3Fpub_id%3D4403CL4185%26url%3Dhttp%253A%252F%252Fwww.amazon.in%252Fdp%252FB00FXLCG7G" target="_new" style="text-decoration:none;" class="ng-binding">Apple iPhone 5s (Silver, 16GB)</a>
-                </b>
-                <div ng-show="isDrop === false" class="">
-                    <div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
-                    <a href="#" class="itemActionLink" ng-click="alertPrice({pid: itemJson['pd']['pid']})">Price drop notification</a>
-                    <span> | </span>
-                    <a href="#" class="itemActionLink" ng-click="renderGraph(itemId, true)">Price history</a>
-                    <span> | </span>
-                    <a href="#" class="itemActionLink" rel="" ng-click="stopFunction(itemId)">Stop tracking</a>
-                </div>
-            </div>
-            <div class="col-md-3 ng-binding">
-                <i class="fa fa-inr"></i>17880 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span ng-show="(itemJson.pd.diff) == 0" class="ng-hide">
-<i class="fa fa-chevron-left"></i>
-<i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<i class="fa fa-inr"></i>
-<span class="normal"><b>0</b>
-</span>
-</span>
-                <span ng-show="(itemJson.pd.diff) > 0" class="">
-<i class="fa fa-chevron-up" style="color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<i class="fa fa-inr"></i>
-<span class="normal"><b class="ng-binding">381</b>
-</span>
-</span>
-                <span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
-<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<i class="fa fa-inr"></i>
-<span class="normal"><b class="ng-binding">381</b>
-</span>
-</span>
-            </div>
-            <div class="col-md-2 text-center">
-                <a href="/redirect?to=http%3A%2F%2Flinksredirect.com%3Fpub_id%3D4403CL4185%26url%3Dhttp%253A%252F%252Fwww.amazon.in%252Fdp%252FB00FXLCG7G" target="_new" class="btn btn-success">Buy Now</a>
-                <img ng-src="/dist/amzn.png" height="20px;" src="/dist/amzn.png">
-            </div>
-        </div>
-    </div><hr></div><!-- end ngRepeat: itemId in trackedItems --></div>
-{% if "response" in res %}
+	<div class="dataToSort">
+		<div class="row">
+			<div class="col-md-2 itemImageBig">
+				<a href=""
+				   style="text-decoration:none;">
+					<img src="http://ecx.images-amazon.com/images/I/41L3k5QtE3L._SL160_.jpg">
+				</a>
+			</div>
+			<div class="col-md-5">
+				<b>
+					<a href="" style="text-decoration:none;"></a>
+				</b>
+				<div>
+					<div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
+					<a href="">Price drop notification</a>
+					<span> | </span>
+					<a href="">Price history</a>
+					<span> | </span>
+					<a href="">Stop tracking</a>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<i class="fa fa-inr"></i>17880 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<i class="fa fa-inr"></i>
+				<span class="normal"><b>0</b></span>
+				<i class="fa fa-chevron-up" style="color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<i class="fa fa-inr"></i>
+				<span><b>381</b></span>
+				<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
+							<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+			</div>
+			<div class="col-md-2 text-center">
+				<a href="" class="btn btn-success">Buy Now</a>
+			</div>
+		</div>
+	</div>
+	<hr>
+	{% if "response" in res %}
 		hi
 	{% endif %}
 {% endblock %}
