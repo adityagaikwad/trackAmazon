@@ -2,9 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render, render_to_response
 from .forms import *
 
+
 def index_req(request):
     if request.method == "POST":
         # add product to product model and get full dictionary OR update the dict in "IF" part
+        print("IN INDEX FORM SUBMITTED")
         form = UrlForm(request.POST)
         url = ""
         if form.is_valid():
@@ -21,7 +23,7 @@ def index_req(request):
         ASIN = url.split("/product/")[1].strip("/")
         img = "http://images.amazon.com/images/P/" + ASIN + ".01.jpg"
         di = {"img_url": img}
-        form = UrlForm(request.POST, )
+        form = UrlForm()
         return render(request, "index.html", di)
 
 def get_products(url = None):

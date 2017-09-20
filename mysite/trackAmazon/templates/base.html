@@ -26,14 +26,27 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav" style="font-size: large">
-				<li><a href="/">Home</a></li>
+				{% if Login == "True" %}
+					<li><a href="/">Home</a></li>
+				{% endif %}
 				<li><a><i class="fa fa-twitter"></i></a></li>
 				<li><a><i class="fa fa-facebook"></i></a></li>
 				<li><a href="contact">Contact Us</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> <span style="font-size: large"> Login</span></a>
-				</li>
+				{% if Login == "True" %}
+					<li><a href="login"><span class="glyphicon glyphicon-log-out"></span>
+						<span style="font-size: large">
+							Logout
+						</span></a>
+					</li>
+				{% else %}
+					<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>
+						<span style="font-size: large">
+							Login
+						</span></a>
+					</li>
+				{% endif %}
 			</ul>
 		</div>
 	</div>

@@ -1,21 +1,23 @@
 from django import forms
-from django.contrib.auth.models import User
+
+from ..models import Users
 
 
 class UrlForm(forms.Form):
-    class Meta:
-        model = User
-        fields = ['url']
+    url = forms.CharField(max_length=500)
+   
+    
+class LoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Username'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Email'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Enter Password'}))
         
-class LoginForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password']
         
 class RegisterForm(forms.ModelForm):
-    password  = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter username'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter email'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter password'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm password'}))
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password', 'password2']
+        model = Users
+        fields = ['username', 'email', 'password']
