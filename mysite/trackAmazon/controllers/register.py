@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import *
+from ..forms import *
+
 
 def register(request):
     if request.method == "POST":

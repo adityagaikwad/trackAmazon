@@ -3,6 +3,7 @@ from django.forms import ModelForm
 
 # USE DB BROWSER for SQLite to modify tables
 
+
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=100)
@@ -19,8 +20,3 @@ class Product(models.Model):
     increase = models.PositiveIntegerField()
     decrease = models.PositiveIntegerField()
     img_url = models.CharField(max_length=500, blank=True)
-    
-# class RegisterForm(ModelForm):
-#     class Meta:
-#         model = Users
-#         fields = ['username', 'email', 'password']

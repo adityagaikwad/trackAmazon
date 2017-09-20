@@ -1,6 +1,5 @@
 from django import forms
-
-from ..models import Users
+from .models import *
 
 
 class UrlForm(forms.Form):
