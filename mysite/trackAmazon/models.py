@@ -1,9 +1,11 @@
 from django.db import models
 from django.forms import ModelForm
 
+# USE DB BROWSER for SQLite to modify tables
 
 class Users(models.Model):
-    username = models.CharField(primary_key=True, max_length=100)
+    user_id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
     
