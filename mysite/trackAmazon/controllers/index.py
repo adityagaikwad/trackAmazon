@@ -1,9 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from ..forms import *
+from .check_validation import *
 
 
 def index_req(request):
+    if not login(request):
+        form = LoginForm()
+        li = ["Email", "Password"]
+        return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
+    
     if request.method == "POST":
         # add product to product model and get full dictionary OR update the dict in "IF" part
         print("IN INDEX FORM SUBMITTED")

@@ -7,10 +7,13 @@ from django.forms import ModelForm
 class Users(models.Model):
     user_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True)
     password = models.CharField(max_length=100)
-    
-    
+
+    def __str__(self):  # __unicode__ on Python 2
+        return self.username
+
+
 class Product(models.Model):
     user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
     product_url = models.CharField(max_length=500, blank=True)
@@ -20,3 +23,6 @@ class Product(models.Model):
     increase = models.PositiveIntegerField()
     decrease = models.PositiveIntegerField()
     img_url = models.CharField(max_length=500, blank=True)
+    
+    def __str__(self):  # __unicode__ on Python 2
+        return self.title

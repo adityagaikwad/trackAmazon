@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from ..forms import *
+from .check_validation import *
 
 
 def register(request):
@@ -9,7 +10,7 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, "index.html", {"Login": "True", "Text": "Logout"})
+            return render(request, "index.html", {"Login": "True", "Text": "Logout", "data": request.session})
         else:
             return HttpResponse("Invalid")
             # return render(request, "register.html", {"form": form})
