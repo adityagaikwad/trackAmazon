@@ -3,74 +3,80 @@
 {% block body %}
 	<br/>
 	<br/>
-	<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
-	<br/>
-	<div class="col-xs-2"></div>
-	<div class="col-xs-8">
-		<form method="POST" action="" class="form-group">
-			{% csrf_token %}
-			<div class="input-group">
-				<input type="text" class="form-control" id="url"
-				       placeholder="Enter product link like https://www.amazon.in/Apple-iPhone-5s-Gold-16GB/dp/B00FXLCD38"
-				       required>
-				<span class="input-group-btn">
-			    <button class="btn btn-primary" type="submit">Add to Watch List</button>
-		    </span>
-			</div>
-			{% for field in form.fields %}
-				{% if field.errors %}
-					<div class="alert alert-danger">
-						{{ field.errors }}
+	<div align="center"><h2>Welcome to trackAmazon {{ username }}</h2></div>
+	{% if Login == "True" %}
+		<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
+		<br/>
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<form method="POST" action="" class="form-group">
+				{% csrf_token %}
+				<div class="input-group">
+					<input type="text" class="form-control" id="url"
+					       placeholder="Enter product link like https://www.amazon.in/Apple-iPhone-5s-Gold-16GB/dp/B00FXLCD38"
+					       required>
+					<span class="input-group-btn">
+				    <button class="btn btn-primary" name="url" type="submit">Add to Watch List</button>
+			    </span>
+				</div>
+				{% for field in form.fields %}
+					{% if field.errors %}
+						<div class="alert alert-danger">
+							{{ field.errors }}
+						</div>
+					{% endif %}
+				{% endfor %}
+			</form>
+			<br>
+			<br>
+
+			<div class="dataToSort">
+				<div class="row">
+					<div class="col-md-2 itemImageBig">
+
+						<a href=""
+						   style="text-decoration:none;">
+							<img src="{{ img_url }}">
+						</a>
 					</div>
-				{% endif %}
-			{% endfor %}
-		</form>
-		<br>
-		<br>
+					<div class="col-md-5">
+						<b>
+							<a href="" style="text-decoration:none;"></a>
+						</b>
+						<div>
+							<div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
+							<a href="">Price drop notification</a>
+							<span> | </span>
+							<a href="">Price history</a>
+							<span> | </span>
+							<a href="">Stop tracking</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<i class="fa fa-inr"></i>{{ current_price }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-		<div class="dataToSort">
-			<div class="row">
-				<div class="col-md-2 itemImageBig">
+						<i class="fa fa-inr"></i>
+						<span class="normal"><b>{{ increase }}</b></span>
+						<i class="fa fa-chevron-up" style="color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-					<a href=""
-					   style="text-decoration:none;">
-						<img src="{{ img_url }}">
-					</a>
-				</div>
-				<div class="col-md-5">
-					<b>
-						<a href="" style="text-decoration:none;"></a>
-					</b>
-					<div>
-						<div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
-						<a href="">Price drop notification</a>
-						<span> | </span>
-						<a href="">Price history</a>
-						<span> | </span>
-						<a href="">Stop tracking</a>
+						<i class="fa fa-inr"></i>
+						<span><b>{{ decrease }}</b></span>
+						<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
+							<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+					</div>
+					<div class="col-md-2 text-center">
+						<a href="" class="btn btn-success">Buy Now</a>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<i class="fa fa-inr"></i>{{ current_price }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-					<i class="fa fa-inr"></i>
-					<span class="normal"><b>{{ increase }}</b></span>
-					<i class="fa fa-chevron-up" style="color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-					<i class="fa fa-inr"></i>
-					<span><b>{{ decrease }}</b></span>
-					<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
-						<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					</span>
-				</div>
-				<div class="col-md-2 text-center">
-					<a href="" class="btn btn-success">Buy Now</a>
-				</div>
 			</div>
+			<hr>
 		</div>
-		<hr>
-	</div>
-	{% if "response" in res %}
-		hi
+	{% else %}
+		<br>
+		<br>
+		<br>
+		<div align="center"><h2>Please <a href = "login">login</a> to use app</h2></div>
 	{% endif %}
+
 {% endblock %}

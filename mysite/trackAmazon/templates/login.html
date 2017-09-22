@@ -6,20 +6,25 @@
 			<div class="col-md-12 text-center">
 				<h1>Please enter your login details below</h1>
 				<hr>
-				<form class="form-horizontal" action="" method="POST">
+				<form class="form-horizontal" action="/" method="POST">
 					{% csrf_token %}
 
-{#					{% for error in form.non_field_errors %}#}
-{#						<div class="form-group has-errors text-danger small">#}
-{#							{{ error }}#}
-{#						</div>#}
-{#					{% endfor %}#}
-
+					{% if error == "both" %}
+						<h4>Please enter valid details</h4>
+					{% endif %}
 					{% for field, label in data %}
 						<div class="form-group">
-							<label class="control-label col-md-4">{{ label }}</label>
+							<label class="control-label col-md-4">{{ label }}:</label>
 							<div class="col-md-4">
 								{{ field }}
+
+								{% if label == "Email" and error == "email" %}
+									<span style="color: #ef3434">Please enter correct email</span>
+								{% endif %}
+
+								{% if label == "Password" and error == "password" %}
+									<span style="color: #ef3434">Please enter correct password</span>
+								{% endif %}
 							</div>
 						</div>
 
@@ -34,7 +39,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-md-offset-4 col-md-4">
-							<button type="submit" class="btn btn-primary" style="font-size: 17px">Login</button>
+							<button type="submit" name="login" class="btn btn-primary" style="font-size: 17px">Login</button>
 						</div>
 					</div>
 

@@ -5,22 +5,57 @@ from .check_validation import *
 
 
 def index_req(request):
-    if not login(request):
-        form = LoginForm()
-        li = ["Email", "Password"]
-        return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
+    # if not check_login(request):
+    #     form = LoginForm()
+    #     li = ["Email", "Password"]
+    #     return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
     
     if request.method == "POST":
-        # add product to product model and get full dictionary OR update the dict in "IF" part
-        print("IN INDEX FORM SUBMITTED")
-        form = UrlForm(request.POST)
-        url = ""
-        if form.is_valid():
-            di = get_products(url)
-            print("valid")
-            di = {}
-            return render(request, "index.html", di)
-        return HttpResponse("invalid url")
+        if "url" in request.POST:
+            # add product to product model and get full dictionary OR update the dict in "IF" part
+            print("IN INDEX FORM SUBMITTED")
+            form = UrlForm(request.POST)
+            url = ""
+            if form.is_valid():
+                di = get_products(url)
+                print("valid")
+                di = {}
+                return render(request, "index.html", di)
+            return HttpResponse("invalid url")
+        elif "login" in request.POST:
+            print("IN LOGIN FORM SUBMITTED")
+            form = LoginForm(request.POST)
+            if form.is_valid():
+                email = form.cleaned_data['email']
+                password = form.cleaned_data['password']
+                try:
+                    user_obj = Users.objects.get(email=email)
+                # print(user_obj.username)
+                except:
+                    form = LoginForm()
+                    li = ["Email", "Password"]
+                    return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
+                if user_obj:
+                    username = user_obj.username
+                    if user_obj.password == password:
+                        # request.session['username'] = username
+                        # request.session['logged_in'] = "True"
+                        print(username)
+                        return render(request, "index.html", {"Login": "True", "username": username})
+                    else:
+                        print("Password")
+                        form = LoginForm()
+                        li = ["Email", "Password"]
+                        return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
+                else:
+                    form = LoginForm()
+                    li = ["Email", "Password"]
+                    return render(request, "login.html", {"error": "register", 'data': zip(form, li)})
+            else:
+                form = LoginForm()
+                print("BOTH")
+                li = ["Email", "Password"]
+                return render(request, "login.html", {"error": "both", 'data': zip(form, li)})
     else:
         # get product details from product model and return that dict for our username
         # get username from session
