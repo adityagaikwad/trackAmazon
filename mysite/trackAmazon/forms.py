@@ -3,8 +3,8 @@ from .models import *
 
 
 class UrlForm(forms.Form):
-    url = forms.CharField(max_length=500)
-   
+    url = forms.URLField(max_length=500)
+
     
 class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Email'}))

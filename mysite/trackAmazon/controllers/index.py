@@ -5,20 +5,16 @@ from .check_validation import *
 
 
 def index_req(request):
-    # if not check_login(request):
-    #     form = LoginForm()
-    #     li = ["Email", "Password"]
-    #     return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
-    
     if request.method == "POST":
         if "url" in request.POST:
             # add product to product model and get full dictionary OR update the dict in "IF" part
             print("IN INDEX FORM SUBMITTED")
             form = UrlForm(request.POST)
-            url = ""
+            print(request.POST.get('url_val'))
             if form.is_valid():
+                url = form.cleaned_data['url_val']
                 di = get_products(url)
-                print("valid")
+                print(url)
                 di = {}
                 return render(request, "index.html", di)
             return HttpResponse("invalid url")
@@ -30,7 +26,6 @@ def index_req(request):
                 password = form.cleaned_data['password']
                 try:
                     user_obj = Users.objects.get(email=email)
-                # print(user_obj.username)
                 except:
                     form = LoginForm()
                     li = ["Email", "Password"]
@@ -38,8 +33,6 @@ def index_req(request):
                 if user_obj:
                     username = user_obj.username
                     if user_obj.password == password:
-                        # request.session['username'] = username
-                        # request.session['logged_in'] = "True"
                         print(username)
                         return render(request, "index.html", {"Login": "True", "username": username})
                     else:
