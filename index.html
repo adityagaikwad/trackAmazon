@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<br/>
+	<br/>
+    <style>
+    .about
+    {
+    margin-left: 0.5cm;
+
+    }
+    </style>
+
+</div>
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Set Alert For</h4>
+      </div>
+      <div class="modal-body">
+       <div id="alertInner" style="padding-left:15px;">
+           <span><h3>Price right now is </h3>
+               <form name="alertForm" ng-controller="ItemController"></form><div class="form-group"></div>
+               <div class="radio"><input type="radio" name="alert_pref" value="email" >&nbsp;Send mail to
+                   <div class="input-group input-group-sm">
+                       <span class="input-group-addon">
+                           <i class="fa fa-envelope"></i></span>
+                       <input type="email" name="alert_pref_email" required class="form-control">
+                   </div>&nbsp;when price drops below
+                   <div class="input-group input-group-sm"><span class="input-group-addon"><i class="fa fa-inr"></i></span>
+                       <input type="text" name="alert_price"  required class="form-control"></div>
+               </div><span ><div class="radio">
+                   <input type="radio" name="alert_pref" value="none" >&nbsp;Disable this alert</div>
+                   <div align="right">
+                      <button data-dismiss="modal"  class="btn btn-danger">Close</button>
+          <button ng-disabled="showAlertSave == false" ng-click="saveAlert()" class="btn btn-success">Save</button></div>
+       </span></span></div></div>
+      </div>
+
+      <div class="modal-footer">
+
+      </div>
+    </div>
+
+  </div>
+    <div align="center"><h2 >Welcome to TrackAmazon {{ username }}</h2></div>
+    <br>
+    <div align="left" class="about"><div><h4>Why this web site ?</h4></div>
+        Inspired by a Digital Inspiration post this website hosts a simple <a href="https://www.amazon.in/">Amazon.In</a> price tracker. Hope this saves you some money. </div>
+    <br>
+    <div align="left" class="about"><div><h4>Which Stack?</h4></div>
+        Built using <a href="https://www.djangoproject.com/">Django</a> framework,<a href="https://www.w3schools.com/css/"> CSS</a>,
+        <a href="https://www.w3schools.com/html/">HTML</a> .
+    </div>
+    <br>
+    <div align="left" class="about">
+        <div><h4> How to Works?</h4></div>
+   <div> To get started copy the exact product link from website and paste in the textbox on dashboard page.
+       Try adding direct product page link and not the search page link.</div><br>
+        <img src="https://pricetrak.in/dist/hiw-copy.png" width="1400cm">
+    </div>
+	{% if Login == "True" %}
+		<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
+		<br/>
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8">
+			<form method="POST" action="" class="form-group">
+				{% csrf_token %}
+				<div class="input-group">
+					<input type="text" class="form-control" name="url_val"
+					       placeholder="Enter product link like https://www.amazon.in/Apple-iPhone-5s-Gold-16GB/dp/B00FXLCD38"
+					       required>
+					<span class="input-group-btn">
+				    <button class="btn btn-primary" name="url" type="submit">Add to Watch List</button>
+			    </span>
+				</div>
+				{% for field in form.fields %}
+					{% if field.errors %}
+						<div class="alert alert-danger">
+							{{ field.errors }}
+						</div>
+					{% endif %}
+				{% endfor %}
+			</form>
+			<br>
+			<br>
+
+			<div class="dataToSort">
+				<div class="row">
+					<div class="col-md-2 itemImageBig">
+
+						<a href=""
+						   style="text-decoration:none;">
+							<img src="{{ img_url }}">
+						</a>
+					</div>
+					<div class="col-md-5">
+						<b>
+							<a href="" style="text-decoration:none;"></a>
+						</b>
+						<div>
+							<div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
+                            <div data-toggle="modal" data-target="#myModal"><a>Price Drop Notification</a></div>
+							<span> | </span>
+							<a href="">Price history</a>
+							<span> | </span>
+							<a href="">Stop tracking</a>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<i class="fa fa-inr"></i>{{ current_price }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<i class="fa fa-inr"></i>
+						<span class="normal"><b>{{ increase }}</b></span>
+						<i class="fa fa-chevron-up" style="color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<i class="fa fa-inr"></i>
+						<span><b>{{ decrease }}</b></span>
+						<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
+							<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</span>
+					</div>
+					<div class="col-md-2 text-center">
+						<a href="" class="btn btn-success">Buy Now</a>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+	{% else %}
+		<br>
+		<div align="center"><h2>Please <a href = "login">login</a> to use app</h2></div>
+	{% endif %}
+
+{% endblock %}
