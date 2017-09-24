@@ -3,7 +3,55 @@
 {% block body %}
 	<br/>
 	<br/>
-	<div align="center"><h2>Welcome to trackAmazon {{ username }}</h2></div>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Set Alert For</h4>
+				</div>
+				<div class="modal-body">
+					<div id="alertInner" style="padding-left:15px;">
+           <span><h3>Price right now is </h3>
+               <form name="alertForm" ng-controller="ItemController"></form><div class="form-group"></div>
+               <div class="radio"><input type="radio" name="alert_pref" value="email">&nbsp;Send mail to
+                   <div class="input-group input-group-sm">
+                       <span class="input-group-addon">
+                           <i class="fa fa-envelope"></i></span>
+                       <input type="email" name="alert_pref_email" required class="form-control">
+                   </div>&nbsp;when price drops below
+                   <div class="input-group input-group-sm"><span class="input-group-addon"><i
+		                   class="fa fa-inr"></i></span>
+                       <input type="text" name="alert_price" required class="form-control"></div>
+               </div><span><div class="radio">
+                   <input type="radio" name="alert_pref" value="none">&nbsp;Disable this alert</div>
+                   <div align="right">
+                      <button data-dismiss="modal" class="btn btn-danger">Close</button>
+          <button ng-disabled="showAlertSave == false" ng-click="saveAlert()"
+                  class="btn btn-success">Save</button></div>
+       </span></span></div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+
+			</div>
+		</div>
+
+	</div>
+	<div align="center">
+		<h2>Welcome to TrackAmazon {{ username }}</h2>
+		<br>
+		<h3>TrackAmazon can be used to keep track of price changes on <img
+				src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg"
+				width="120px">
+		</h3>
+		<br>
+	</div>
 	{% if Login == "True" %}
 		<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
 		<br/>
@@ -45,7 +93,7 @@
 						</b>
 						<div>
 							<div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
-							<a href="">Price drop notification</a>
+							<div data-toggle="modal" data-target="#myModal"><a>Price Drop Notification</a></div>
 							<span> | </span>
 							<a href="">Price history</a>
 							<span> | </span>
@@ -74,9 +122,7 @@
 		</div>
 	{% else %}
 		<br>
-		<br>
-		<br>
-		<div align="center"><h2>Please <a href = "login">login</a> to use app</h2></div>
+		<div align="center"><h2>Please <a href="login">login</a> to use app</h2></div>
 	{% endif %}
 
 {% endblock %}

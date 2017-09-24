@@ -54,4 +54,4 @@ def index_req(request):
     else:
         list_of_product_dicts = get_products()
         form = UrlForm()
-        return render(request, "index.html", list_of_product_dicts)
+        return render(request, "index.html", {"data": list_of_product_dicts})

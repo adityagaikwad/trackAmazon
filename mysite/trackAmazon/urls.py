@@ -4,6 +4,7 @@ from .controllers.index import *
 from .controllers.login import *
 from .controllers.register import *
 from .controllers.contact import *
+from .controllers.works import *
 
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     url(r'^login$', login, name="login"),
     url(r'^register$', register, name="register"),
     url(r'^contact$', contact, name="contact"),
+    url(r'^how-it-works', works, name="works")
 ]
