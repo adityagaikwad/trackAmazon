@@ -3,7 +3,7 @@ from .models import *
 
 
 class UrlForm(forms.Form):
-    url = forms.URLField(max_length=500)
+    url = forms.URLField()
 
     
 class LoginForm(forms.Form):

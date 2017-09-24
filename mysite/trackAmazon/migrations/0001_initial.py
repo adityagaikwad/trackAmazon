@@ -14,26 +14,4 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Login',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('username', models.CharField(max_length=100)),
-                ('email', models.EmailField(max_length=100)),
-                ('password', models.CharField(max_length=100)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Product',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('asin', models.CharField(max_length=50)),
-                ('current_price', models.PositiveIntegerField()),
-                ('increase', models.PositiveIntegerField()),
-                ('decrease', models.PositiveIntegerField()),
-                ('img_url', models.CharField(max_length=500)),
-                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='trackAmazon.Login')),
-            ],
-        ),
     ]

@@ -10,7 +10,7 @@
 					{% csrf_token %}
 
 					{% if error == "both" %}
-						<h4>Please enter valid details</h4>
+						<h4>Please enter valid details. Register before logging in.</h4>
 					{% endif %}
 					{% for field, label in data %}
 						<div class="form-group">

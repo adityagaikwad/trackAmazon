@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from ..forms import *
-from .check_validation import *
 
 
 def register(request):
