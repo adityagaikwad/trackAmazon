@@ -3,14 +3,14 @@ from .models import *
 
 
 class UrlForm(forms.Form):
-    url = forms.URLField()
+    url = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter product link like https://www.amazon.in/Apple-iPhone-5s-Gold-16GB/dp/B00FXLCD38'}))
 
     
 class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Email'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Enter Password'}))
-        
-        
+    
+    
 class RegisterForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter username'}))
     email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter email'}))

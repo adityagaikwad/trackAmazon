@@ -55,18 +55,20 @@
 	{% if Login == "True" %}
 		<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
 		<br/>
+{#		{{ data }}#}
 		<div class="col-xs-2"></div>
 		<div class="col-xs-8">
 			<form method="POST" action="" class="form-group">
 				{% csrf_token %}
-				<div class="input-group">
-					<input type="text" class="form-control" name="url_val"
-					       placeholder="Enter product link like https://www.amazon.in/Apple-iPhone-5s-Gold-16GB/dp/B00FXLCD38"
-					       required>
-					<span class="input-group-btn">
-				    <button class="btn btn-primary" name="url" type="submit">Add to Watch List</button>
-			    </span>
-				</div>
+				{% for field in form %}
+					<div class="input-group col-xs-12">
+						{{ field }}
+						<span class="input-group-btn">
+				            <button class="btn btn-primary" name="url" type="submit">Add to Watch List</button>
+			            </span>
+					</div>
+				{% endfor %}
+
 				{% for field in form.fields %}
 					{% if field.errors %}
 						<div class="alert alert-danger">

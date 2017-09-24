@@ -36,7 +36,7 @@ def get_products(url=None, email_id = None):
             
             graph = Graph(product[0].product_id,datetime.now(), price)
             graph.save()
-            print(graph)
+            # print(graph)
         else:
             print("Adding NEW PRODUCT")
             # CHANGE HARDCODED AUTOFIELDS
@@ -54,9 +54,10 @@ def get_products(url=None, email_id = None):
     
     # products has list of product_dicts
     
-    products = User_products.objects.filter(user_id=user_id).values()
-    print(products)
-
+    products = User_products.objects.filter(user_id=user_id).values()[::1]
+    # for product in products:
+    #     print(product['created_at'])
+    
     # insert
     # into
     # 'trackAmazon_user_products'('id', 'price_when_added', 'product_id', 'user_id', 'created_at', 'updated_at')
