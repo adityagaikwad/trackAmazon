@@ -11,7 +11,7 @@ def get_products(request, url=None):
         email_id = request.session["email"]
         # email_id = "adityagaikwad009@gmail.com"
         user = Users.objects.get(email=email_id)
-        # print(user)
+        print(email_id)
         # url = "https://www.amazon.in/dp/B073B3HYXR"
         
         # access key, secret key, associate tag
@@ -38,7 +38,7 @@ def get_products(request, url=None):
                 # check if product is in Products table
                 product = Product.objects.filter(asin=ASIN)
                 if product.exists():
-                    user_prod_check = User_products.objects.filter(product_id=product)
+                    user_prod_check = User_products.objects.filter(product_id=product, user_id=user)
                     
                     if not user_prod_check.exists():
                         user_prod = User_products(user_id=user, product_id=product[0], price_when_added=price,

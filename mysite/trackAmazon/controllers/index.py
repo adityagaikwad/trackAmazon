@@ -60,6 +60,24 @@ def index_req(request):
                 form = LoginForm()
                 li = ["Email", "Password"]
                 return render(request, "login.html", {"error": "both", 'data': zip(form, li)})
+        elif "register" in request.POST:
+            print("IN REGISTER FORM SUBMITTED")
+            form = RegisterForm(request.POST)
+            print(form.errors)
+            if form.is_valid():
+                form.save()
+                email_id = form.cleaned_data['email']
+                password = form.cleaned_data['password']
+                username = form.cleaned_data['username']
+                request.session['email'] = email_id
+                request.session['username'] = username
+                list_of_product_dicts = get_products(request)
+                form = UrlForm()
+                return render(request, "index.html",
+                              {"Login": "True", "username": username, "data": list_of_product_dicts,
+                               "form": form})
+            else:
+                return HttpResponse("Invalid Register form")
         else:
             form = LoginForm()
             print("BOTH")
