@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from ..forms import *
+from .logout import *
 from .get_products import *
+
 
 def index_req(request):
     if request.method == "POST":
@@ -11,13 +13,16 @@ def index_req(request):
             print("IN INDEX FORM SUBMITTED")
             form = UrlForm(request.POST)
             print(email)
+            print(form.data["url"])
             if form.is_valid():
-                url = form.cleaned_data['url']
-                list_of_product_dicts = get_products(url, email)
+                url = form.cleaned_data["url"]
+                list_of_product_dicts = get_products(request, url)
                 print(url)
                 form = UrlForm()
-                print("AIHAIHDI")
-                return render(request, "index.html", {"data": list_of_product_dicts, "form": form})
+                print("URL VALID")
+                username = request.session["username"]
+                return render(request, "index.html",
+                              {"Login": "True", "username": username, "data": list_of_product_dicts, "form": form})
             else:
                 return HttpResponse("invalid url")
         elif "login" in request.POST:
@@ -41,8 +46,11 @@ def index_req(request):
                         form = UrlForm()
                         print("PROPER LOADING")
                         request.session['email'] = email_id
-                        list_of_product_dicts = get_products()
-                        return render(request, "index.html", {"Login": "True", "username": username,"data": list_of_product_dicts, "form": form})
+                        request.session['username'] = username
+                        list_of_product_dicts = get_products(request)
+                        return render(request, "index.html",
+                                      {"Login": "True", "username": username, "data": list_of_product_dicts,
+                                       "form": form})
                     else:
                         print("Password")
                         form = LoginForm()
@@ -57,10 +65,18 @@ def index_req(request):
             print("BOTH")
             li = ["Email", "Password"]
             return render(request, "login.html", {"error": "both", 'data': zip(form, li)})
-
+    
     else:
-        list_of_product_dicts = get_products()
-        form = UrlForm()
-        # print(form)
-        print("AIH")
-        return render(request, "index.html", {"data": list_of_product_dicts, "form": form})
+        if "email" not in request.session:
+            list_of_product_dicts = get_products(request)
+            form = UrlForm()
+            # print(form)
+            print("REFRESH CALLED")
+            return render(request, "index.html", {"data": list_of_product_dicts, "form": form})
+        else:
+            email_id = request.session['email']
+            username = request.session['username']
+            list_of_product_dicts = get_products(request)
+            form = UrlForm()
+            return render(request, "index.html",
+                          {"Login": "True", "username": username, "data": list_of_product_dicts, "form": form})

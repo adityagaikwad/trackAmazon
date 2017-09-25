@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
 def works(request):
-    return render(request, "works.html")
+    if "email" in request.session:
+        return render(request, "works.html", {"Login": "True"})
+    else:
+        return render(request, "works.html")

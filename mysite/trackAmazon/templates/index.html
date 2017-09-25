@@ -55,70 +55,100 @@
 	{% if Login == "True" %}
 		<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
 		<br/>
-{#		{{ data }}#}
+
 		<div class="col-xs-2"></div>
 		<div class="col-xs-8">
-			<form method="POST" action="" class="form-group">
+			<form method="POST" action="/" class="form-group">
 				{% csrf_token %}
-				{% for field in form %}
-					<div class="input-group col-xs-12">
-						{{ field }}
-						<span class="input-group-btn">
-				            <button class="btn btn-primary" name="url" type="submit">Add to Watch List</button>
-			            </span>
-					</div>
-				{% endfor %}
 
-				{% for field in form.fields %}
-					{% if field.errors %}
-						<div class="alert alert-danger">
-							{{ field.errors }}
-						</div>
-					{% endif %}
-				{% endfor %}
+								{% for field in form %}
+									<div class="input-group col-xs-12">
+										{{ field }}
+										<span class="input-group-btn">
+								            <button class="btn btn-primary" name="url_submit" type="submit">Add to Watch List</button>
+							            </span>
+									</div>
+								{% endfor %}
+
+								{% for field in form.fields %}
+									{% if field.errors %}
+										<div class="alert alert-danger">
+											{{ field.errors }}
+										</div>
+									{% endif %}
+								{% endfor %}
 			</form>
 			<br>
 			<br>
 
 			<div class="dataToSort">
-				<div class="row">
-					<div class="col-md-2 itemImageBig">
+				{% for product in data %}
+					<div class="row">
+						<div class="col-md-2 itemImageBig">
 
-						<a href=""
-						   style="text-decoration:none;">
-							<img src="{{ img_url }}">
-						</a>
-					</div>
-					<div class="col-md-5">
-						<b>
-							<a href="" style="text-decoration:none;"></a>
-						</b>
-						<div>
-							<div class="text-muted very-small ng-binding">Updated 14th Sep 17 at 07:22 pm</div>
-							<div data-toggle="modal" data-target="#myModal"><a>Price Drop Notification</a></div>
-							<span> | </span>
-							<a href="">Price history</a>
-							<span> | </span>
-							<a href="">Stop tracking</a>
+							<a href=""
+							   style="text-decoration:none;">
+								<img src="{{ product.img_url }}">
+							</a>
+						</div>
+						<div class="col-md-5">
+							<b>
+								<a href="" style="text-decoration:none;"></a>
+							</b>
+							<h4>{{ product.title }}</h4>
+							<div>
+								<br>
+								<div class="text-muted very-small ng-binding">Updated {{ product.updated_at }}</div>
+								<br>
+								<div data-toggle="modal" data-target="#myModal"><a>Price Drop Notification</a>
+									<span> | </span>
+									<a href="">Price history</a>
+									<span> | </span>
+									<a href="">Stop tracking</a>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-3">
+							<i class="fa fa-inr"></i>{{ product.curr_price }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+							{% if "loss" in product %}
+								{% if product.loss > 0 %}
+									<i class="fa fa-inr"></i>
+									<span><b>{{ product.loss }}</b></span>
+									<span class="ng-hide">
+										<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+								{% else %}
+									<i class="fa fa-inr"></i>
+									<span><b>{{ product.loss }}</b></span>
+									<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
+										<i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+								{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							{% else %}
+								{% if product.profit > 0 %}
+									<i class="fa fa-inr"></i>
+									<span><b>{{ product.profit }}</b></span>
+									<span class="ng-hide">
+										<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+								{% else %}
+									<i class="fa fa-inr"></i>
+									<span><b>{{ product.profit }}</b></span>
+									<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
+										<i class="fa fa-chevron-left"></i><i class="fa fa-chevron-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+								{% endif %}
+							{% endif %}
+						</div>
+						<div class="col-md-2 text-center">
+							<a href={{ product.product_url }} class="btn btn-success">Buy Now</a>
 						</div>
 					</div>
-					<div class="col-md-3">
-						<i class="fa fa-inr"></i>{{ current_price }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<br>
+				{% endfor %}
 
-						<i class="fa fa-inr"></i>
-						<span class="normal"><b>{{ increase }}</b></span>
-						<i class="fa fa-chevron-up" style="color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-						<i class="fa fa-inr"></i>
-						<span><b>{{ decrease }}</b></span>
-						<span ng-show="(itemJson.pd.diff) < 0" class="ng-hide">
-							<i class="fa fa-chevron-down" style="color:green"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</span>
-					</div>
-					<div class="col-md-2 text-center">
-						<a href="" class="btn btn-success">Buy Now</a>
-					</div>
-				</div>
 			</div>
 			<hr>
 		</div>
