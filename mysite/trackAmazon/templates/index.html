@@ -6,39 +6,48 @@
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
-
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Set Alert For</h4>
 				</div>
+
 				<div class="modal-body">
 					<div id="alertInner" style="padding-left:15px;">
-           <span><h3>Price right now is </h3>
+							<h3>Price right now is </h3>
+							<div class="radio"><input type="radio" name="alert_pref" value="email">&nbsp;Send mail to
 
-               <div class="radio"><input type="radio" name="alert_pref" value="email">&nbsp;Send mail to
-                   <div class="input-group input-group-sm">
-                       <span class="input-group-addon">
-                           <i class="fa fa-envelope"></i></span>
-                       <input type="email" name="alert_pref_email" required class="form-control">
-                   </div>&nbsp;when price drops below
-                   <div class="input-group input-group-sm"><span class="input-group-addon"><i
-		                   class="fa fa-inr"></i></span>
-                       <input type="text" name="alert_price" required class="form-control"></div>
-               </div><span><div class="radio">
-                   <input type="radio" name="alert_pref" value="none">&nbsp;Disable this alert</div>
-                   <div align="right">
-                       <form method="POST" action="/" class="form-group">
-                   {% csrf_token %}
-                      <button data-dismiss="modal" class="btn btn-danger">Close</button>
-          <button ng-disabled="showAlertSave == false" ng-click="saveAlert()"
-                  class="btn btn-success" name="save">Save</button></form></div>
-               </span></span></div>
+								<div class="input-group input-group-sm">
+									<span class="input-group-addon">
+										<i class="fa fa-envelope"></i>
+									</span>
+									<input type="email" name="alert_pref_email" required class="form-control">
+								</div>&nbsp;When price drops below
+
+								<div class="input-group input-group-sm">
+									<span class="input-group-addon">
+										<i class="fa fa-inr"></i>
+									</span>
+									<input type="text" name="alert_price" required class="form-control">
+								</div>
+							</div>
+						<div class="radio">
+							<input type="radio" name="alert_pref" value="Disable this alert">&nbsp;Disable this alert
+						</div>
+
+						<div align="right">
+							<form method="POST" action="/" class="form-group">
+								{% csrf_token %}
+								<button data-dismiss="modal" class="btn btn-danger">Close</button>
+								<button ng-disabled="showAlertSave == false" ng-click="saveAlert()" class="btn btn-success"
+	                               name="save">Save</button>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 	{% if not Login %}
@@ -46,11 +55,12 @@
 			<br/>
 			<h2>Welcome to TrackAmazon</h2>
 			<br>
-			<h3>TrackAmazon can be used to keep track of price changes on <img
+			<h2>TrackAmazon can be used to keep track of price changes on <img
 					src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg"
 					width="120px">
-			</h3>
+			</h2>
 			<br>
+			<div align="center"><h2>Please <a href="login">login</a> to use app</h2></div>
 		</div>
 	{% endif %}
 
@@ -164,9 +174,6 @@
 			</div>
 			<hr>
 		</div>
-	{% else %}
-		<br>
-		<div align="center"><h2>Please <a href="login">login</a> to use app</h2></div>
 	{% endif %}
 
 {% endblock %}
