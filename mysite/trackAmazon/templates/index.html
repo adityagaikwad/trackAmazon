@@ -2,7 +2,6 @@
 
 {% block body %}
 	<br/>
-	<br/>
 
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
@@ -41,40 +40,55 @@
 		</div>
 
 	</div>
-	<div align="center">
-		<h2>Welcome to TrackAmazon {{ username }}</h2>
-		<br>
-		<h3>TrackAmazon can be used to keep track of price changes on <img
-				src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg"
-				width="120px">
-		</h3>
-		<br>
-	</div>
+
+	{% if not Login %}
+		<div align="center">
+			<br/>
+			<h2>Welcome to TrackAmazon</h2>
+			<br>
+			<h3>TrackAmazon can be used to keep track of price changes on <img
+					src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg"
+					width="120px">
+			</h3>
+			<br>
+		</div>
+	{% endif %}
+
 	{% if Login == "True" %}
-		<h3 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h3>
-		<br/>
+		<div align="center">
+			<h3>Welcome to TrackAmazon, {{ username }}</h3>
+
+			<h3>TrackAmazon can be used to keep track of price changes on <img
+					src="http://media.corporate-ir.net/media_files/IROL/17/176060/img/logos/amazon_logo_RGB.jpg"
+					width="120px">
+			</h3>
+			<br>
+		</div>
+
+		<h4 style="text-align: center; color: #216e91">Enter page link for product you want to track below</h4>
+
 
 		<div class="col-xs-2"></div>
 		<div class="col-xs-8">
 			<form method="POST" action="/" class="form-group">
 				{% csrf_token %}
 
-								{% for field in form %}
-									<div class="input-group col-xs-12">
-										{{ field }}
-										<span class="input-group-btn">
-								            <button class="btn btn-primary" name="url_submit" type="submit">Add to Watch List</button>
-							            </span>
-									</div>
-								{% endfor %}
+				{% for field in form %}
+					<div class="input-group col-xs-12">
+						{{ field }}
+						<span class="input-group-btn">
+							<button class="btn btn-primary" name="url_submit" type="submit">Add to Watch List</button>
+						</span>
+					</div>
+				{% endfor %}
 
-								{% for field in form.fields %}
-									{% if field.errors %}
-										<div class="alert alert-danger">
-											{{ field.errors }}
-										</div>
-									{% endif %}
-								{% endfor %}
+				{% for field in form.fields %}
+					{% if field.errors %}
+						<div class="alert alert-danger">
+							{{ field.errors }}
+						</div>
+					{% endif %}
+				{% endfor %}
 			</form>
 			<br>
 			<br>
@@ -86,7 +100,7 @@
 
 							<a href=""
 							   style="text-decoration:none;">
-								<img src="{{ product.img_url }}">
+								<img src="{{ product.img_url }}" width="100px">
 							</a>
 						</div>
 						<div class="col-md-5">

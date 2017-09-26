@@ -10,9 +10,12 @@ def get_products(request, url=None):
     if "email" in request.session:
         email_id = request.session["email"]
         # email_id = "adityagaikwad009@gmail.com"
-        user = Users.objects.get(email=email_id)
-        print(email_id)
-        # url = "https://www.amazon.in/dp/B073B3HYXR"
+        try:
+            user = Users.objects.get(email=email_id)
+            print(email_id)
+            # url = "https://www.amazon.in/dp/B073B3HYXR"
+        except:
+            return None
         
         # access key, secret key, associate tag
         if url is not None:
@@ -28,13 +31,12 @@ def get_products(request, url=None):
                 print(region)
                 ASIN = url.split("/dp/")[1].strip("/").split("/")[0]
                 print(ASIN)
-                img = "http://images.amazon.com/images/P/" + ASIN + ".01.jpg"
                 amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG, region=region.upper())
                 products = amazon.lookup(ItemId=ASIN)
+                img = products.large_image_url
                 price, currency = products.price_and_currency
                 title = products.title
                 print(title)
-                # ASIN = "ABCDEGll"
                 # check if product is in Products table
                 product = Product.objects.filter(asin=ASIN)
                 if product.exists():
@@ -49,7 +51,7 @@ def get_products(request, url=None):
                         graph = Graph(product_id=product[0], updated_at=datetime.now(), current_price=price)
                         graph.save()
                     else:
-                        return "exists", get_old_list(request)
+                        return get_old_list(request)
             except:
                 print("ERROR IN FETCHING PRODUCT")
                 return get_old_list(request)

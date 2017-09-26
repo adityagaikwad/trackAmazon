@@ -9,8 +9,8 @@
 				<form class="form-horizontal" action="/" method="POST">
 					{% csrf_token %}
 
-					{% if error == "both" %}
-						<h4>Please enter valid details. Register before logging in.</h4>
+					{% if error == "register" %}
+						<h4>Please register before logging in</h4>
 					{% endif %}
 					{% for field, label in data %}
 						<div class="form-group">
@@ -19,9 +19,8 @@
 								{{ field }}
 
 								{% if label == "Email" and error == "email" %}
-									<span style="color: #ef3434">Please enter correct email</span>
+									<h4>Please enter proper email id</h4>
 								{% endif %}
-
 								{% if label == "Password" and error == "password" %}
 									<span style="color: #ef3434">Please enter correct password</span>
 								{% endif %}
@@ -39,7 +38,8 @@
 					</div>
 					<div class="form-group">
 						<div class="col-md-offset-4 col-md-4">
-							<button type="submit" name="login" class="btn btn-primary" style="font-size: 17px">Login</button>
+							<button type="submit" name="login" class="btn btn-primary" style="font-size: 17px">Login
+							</button>
 						</div>
 					</div>
 

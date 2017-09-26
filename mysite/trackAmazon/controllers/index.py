@@ -19,7 +19,7 @@ def index_req(request):
             if form.is_valid():
                 url = form.cleaned_data["url"]
                 list_of_product_dicts = get_products(request, url)
-                print(url)
+                # print(url)
                 form = UrlForm()
                 print("URL VALID")
                 username = request.session["username"]
@@ -50,7 +50,7 @@ def index_req(request):
                 except:
                     form = LoginForm()
                     li = ["Email", "Password"]
-                    return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
+                    return render(request, "login.html", {"error": "register", 'data': zip(form, li)})
                 if user_obj:
                     username = user_obj.username
                     if user_obj.password == password:
@@ -72,7 +72,7 @@ def index_req(request):
             else:
                 form = LoginForm()
                 li = ["Email", "Password"]
-                return render(request, "login.html", {"error": "both", 'data': zip(form, li)})
+                return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
         elif "register" in request.POST:
             print("IN REGISTER FORM SUBMITTED")
             form = RegisterForm(request.POST)
