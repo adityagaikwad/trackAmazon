@@ -3,6 +3,8 @@ from django.shortcuts import render
 from ..forms import *
 from .logout import *
 from .get_products import *
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 def index_req(request):
@@ -25,9 +27,20 @@ def index_req(request):
                               {"Login": "True", "username": username, "data": list_of_product_dicts, "form": form})
             else:
                 return HttpResponse("invalid url")
+        elif "save" in request.POST:
+            form = EmailForm(request.POST)
+            if form.is_valid():
+                email_id = form.cleaned_data["email_id"]
+                price = form.cleaned_data["price"]
+                send_mail('hello', 'hi', settings.EMAIL_HOST_USER, ['gujarshlok@gmail.com'], fail_silently=False)
+                return render(request,"index.html")
+            else:
+                return HttpResponse("invalid")
+
         elif "login" in request.POST:
             print("IN LOGIN FORM SUBMITTED")
             form = LoginForm(request.POST)
+
             if form.is_valid():
                 email = form.cleaned_data['email']
                 print(email)
