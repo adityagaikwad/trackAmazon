@@ -29,12 +29,10 @@ def index_req(request):
                 return HttpResponse("invalid url")
         elif "save" in request.POST:
             form = EmailForm(request.POST)
-            email = request.session["email_id"]
-            print(email)
             if form.is_valid():
                 email_id = form.cleaned_data["email_id"]
                 price = form.cleaned_data["price"]
-
+                send_mail('hello', 'hi', settings.EMAIL_HOST_USER, ['gujarshlok@gmail.com'], fail_silently=False)
                 return render(request,"index.html")
             else:
                 return HttpResponse("invalid")
@@ -42,7 +40,7 @@ def index_req(request):
         elif "login" in request.POST:
             print("IN LOGIN FORM SUBMITTED")
             form = LoginForm(request.POST)
-            send_mail('hello', 'hi', settings.EMAIL_HOST_USER, ['gujarshlok@gmail.com'], fail_silently=False)
+
             if form.is_valid():
                 email = form.cleaned_data['email']
                 print(email)

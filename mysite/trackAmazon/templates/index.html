@@ -17,8 +17,7 @@
 				<div class="modal-body">
 					<div id="alertInner" style="padding-left:15px;">
            <span><h3>Price right now is </h3>
-               <form method="POST" action="/" class="form-group">
-                   {% csrf_token %}
+
                <div class="radio"><input type="radio" name="alert_pref" value="email">&nbsp;Send mail to
                    <div class="input-group input-group-sm">
                        <span class="input-group-addon">
@@ -31,10 +30,12 @@
                </div><span><div class="radio">
                    <input type="radio" name="alert_pref" value="none">&nbsp;Disable this alert</div>
                    <div align="right">
+                       <form method="POST" action="/" class="form-group">
+                   {% csrf_token %}
                       <button data-dismiss="modal" class="btn btn-danger">Close</button>
           <button ng-disabled="showAlertSave == false" ng-click="saveAlert()"
-                  class="btn btn-success" name="save">Save</button></div>
-               </span></form></span></div>
+                  class="btn btn-success" name="save">Save</button></form></div>
+               </span></span></div>
 				</div>
 			</div>
 		</div>
