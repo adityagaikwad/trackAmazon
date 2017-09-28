@@ -1,53 +1,55 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block body %}
-<style>
-.space
-{
-    margin-left: 7cm;
+	<style>
+		.space {
+			margin-left: 7cm;
 
-}
-.space1
-{
-    margin-left: 0.5cm;
-}
-.radius
-{
-    border-radius: 1000px;
-}
-.size
-{
-    font-size: 0.7cm;
-}
-.size1
-{
-    size: 2cm;
-}
-</style>
-<div class="container-fluid bg-3 text-center">
-  <br>
-    <br>
-    <div class="space">
-  <div class="row">
-    <div class="col-sm-4">
-        <p class="size">Aditya Gaikwad</p>
-      <img class="radius" src="/static/adityagaikwad.jpg" class="img-responsive margin" style="width:80%" alt="Image">
-        <br>
-        <br>
-        <br>
-        <a href="https://github.com/adityagaikwad"><i style="font-size: 50px" class="fa fa-github"></i></a>
-    </div>
-    <div class="col-sm-4" >
-        <p class="size">Shlok Gujar</p>
-      <img src="/static/shlok1.png" class="space1" class="img-responsive margin" style="width:80%" alt="Image">
-        <br>
-        <br>
-        <br>
-        <a href="https://github.com/gujarshlok"><i style="font-size: 50px" class="fa fa-github" ></i></i>
-        </a>
-    </div>
-  </div>
-</div>
-</div>
+		}
+
+		.space1 {
+			margin-left: 0.5cm;
+		}
+
+		.radius {
+			border-radius: 1000px;
+		}
+
+		.size {
+			font-size: 0.7cm;
+		}
+
+		.size1 {
+			size: 2cm;
+		}
+	</style>
+
+	<div class="container-fluid bg-3 text-center">
+		<br>
+		<br>
+		<div class="space">
+			<div class="row">
+				<div class="col-sm-4">
+					<p class="size">Aditya Gaikwad</p>
+					<img class="radius" src="/static/adityagaikwad.jpg" class="img-responsive margin" style="width:80%"
+					     alt="Image">
+					<br>
+					<br>
+					<br>
+					<a href="https://github.com/adityagaikwad"><i style="font-size: 50px" class="fa fa-github"></i></a>
+				</div>
+				<div class="col-sm-4">
+					<p class="size">Shlok Gujar</p>
+					<img src="/static/shlok1.png" class="space1" class="img-responsive margin" style="width:80%"
+					     alt="Image">
+					<br>
+					<br>
+					<br>
+					<a href="https://github.com/gujarshlok"><i style="font-size: 50px" class="fa fa-github"></i></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

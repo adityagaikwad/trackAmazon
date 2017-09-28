@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{#	align back a href#}
+	<div>
+		<h3><a href="/">Back</a></h3>
+	</div>
+
+	<div id="chart-1">
+		{{ output|safe }}
+	</div>
+
+{% endblock %}

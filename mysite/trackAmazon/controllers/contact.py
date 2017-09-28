@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
 def contact(request):
-    return render(request, "contact.html")
+    if "email" in request.session:
+        return render(request, "contact.html", {"Login": "True"})
+    else:
+        return render(request, "contact.html")

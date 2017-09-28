@@ -53,47 +53,50 @@ def get_products(request, url=None):
                         
                         graph = Graph(product_id=product[0], updated_at=datetime.now(), current_price=price)
                         graph.save()
+                        return get_old_list(request)
                     else:
                         return get_old_list(request)
+                else:
+                    print("Adding NEW PRODUCT")
+                    
+                    product_new = Product(product_url=url, title=title, asin=ASIN, img_url=img, created_at=datetime.now())
+                    product_new.save()
+                    
+                    user_prod = User_products(user_id=user, product_id=product_new, price_when_added=price,
+                                              created_at=datetime.now(), updated_at=datetime.now())
+                    user_prod.save()
+                    # print("HIHIHIHIIIIIHIHI" + str(product_new.product_id))
+                    graph = Graph(product_id=product_new, updated_at=datetime.now(), current_price=price)
+                    graph.save()
             except:
                 print("ERROR IN FETCHING PRODUCT")
                 return get_old_list(request)
-            else:
-                print("Adding NEW PRODUCT")
-                
-                product_new = Product(product_url=url, title=title, asin=ASIN, img_url=img, created_at=datetime.now())
-                product_new.save()
-                
-                user_prod = User_products(user_id=user, product_id=product_new, price_when_added=price,
-                                          created_at=datetime.now(), updated_at=datetime.now())
-                user_prod.save()
-                # print("HIHIHIHIIIIIHIHI" + str(product_new.product_id))
-                graph = Graph(product_id=product_new, updated_at=datetime.now(), current_price=price)
-                graph.save()
-        
+
         # add this product to products list
-        
-        # products has list of product_dicts
-        print("GETTING PRODUCTS")
-        user_products = User_products.objects.filter(user_id=user.user_id).values()[::1]
-        product_ids = []
-        for prod in user_products:
-            product = Product.objects.filter(product_id=prod["product_id_id"])
-            graph = Graph.objects.filter(product_id=prod["product_id_id"])
-            print(prod["product_id_id"])
-            if graph.exists() and product.exists() and "title" not in prod:
-                prod["title"] = product[0].title
-                prod["curr_price"] = graph[0].current_price
-                prod["img_url"] = product[0].img_url
-                prod["updated_at"] = graph[0].updated_at
-                prod["product_url"] = product[0].product_url
-                if (prod["curr_price"] < prod["price_when_added"]):
-                    prod["profit"] = prod["price_when_added"] - prod["curr_price"]
-                else:
-                    prod["loss"] = prod["curr_price"] - prod["price_when_added"]
-        
-        return user_products
+        #
+        # # products has list of product_dicts
+        # print("GETTING PRODUCTS")
+        # user_products = User_products.objects.filter(user_id=user.user_id).values()[::1]
+        # product_ids = []
+        # for prod in user_products:
+        #     product = Product.objects.filter(product_id=prod["product_id_id"])
+        #     graph = Graph.objects.filter(product_id=prod["product_id_id"]).last()
+        #     print(prod["product_id_id"])
+        #     if graph and product.exists() and "title" not in prod:
+        #         prod["title"] = product[0].title
+        #         prod["curr_price"] = graph.current_price
+        #         # print("CURRENT PRICCEEEEEE" + str(graph.current_price))
+        #         prod["img_url"] = product[0].img_url
+        #         prod["updated_at"] = graph.updated_at
+        #         prod["product_url"] = product[0].product_url
+        #         if (prod["curr_price"] < prod["price_when_added"]):
+        #             prod["profit"] = prod["price_when_added"] - prod["curr_price"]
+        #         else:
+        #             prod["loss"] = prod["curr_price"] - prod["price_when_added"]
+        #
+        return get_old_list(request)
     return None
+
 
 def get_old_list(request):
     email_id = request.session["email"]
@@ -105,13 +108,14 @@ def get_old_list(request):
     
     for prod in user_products:
         product = Product.objects.filter(product_id=prod["product_id_id"])
-        graph = Graph.objects.filter(product_id=prod["product_id_id"])
+        graph = Graph.objects.filter(product_id=prod["product_id_id"]).last()
         # print(prod["product_id_id"])
-        if graph.exists() and product.exists() and "title" not in prod:
+        if graph and product.exists() and "title" not in prod:
             prod["title"] = product[0].title
-            prod["curr_price"] = graph[0].current_price
+            prod["curr_price"] = graph.current_price
+            # print("CURRENT PRICCEEEEEE" + str(graph.current_price))
             prod["img_url"] = product[0].img_url
-            prod["updated_at"] = graph[0].updated_at
+            prod["updated_at"] = graph.updated_at
             prod["product_url"] = product[0].product_url
             if (prod["curr_price"] < prod["price_when_added"]):
                 prod["profit"] = prod["price_when_added"] - prod["curr_price"]
