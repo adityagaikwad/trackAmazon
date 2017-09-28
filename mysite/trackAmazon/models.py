@@ -34,7 +34,7 @@ class Product(models.Model):
 class Graph(models.Model):
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     updated_at = models.DateTimeField(auto_now_add=True, blank=True)
-    current_price = models.DecimalField(max_digits=20, decimal_places=2)
+    current_price = models.DecimalField(max_digits=20, decimal_places=2,null=True)
 
 
 # has price when user started tracking

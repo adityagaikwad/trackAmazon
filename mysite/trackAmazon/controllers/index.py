@@ -1,12 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from ..forms import *
-from .logout import *
-from .get_products import *
-from django.conf import settings
-from django.core.mail import send_mail
-import decimal
-
+from ..api.get_products import *
 
 def index_req(request):
     
@@ -30,9 +25,7 @@ def index_req(request):
                     print(price_drop)
                     title = request.POST["hidden-title"]
                     print(title)
-                    # get title from AJAX
                     
-                    # title = "Boat Rockerz 400 On-Ear Bluetooth Headphones (Carbon Black)"
                     product = Product.objects.filter(title=title)
                     if product.exists():
                         user_product = User_products.objects.get(user_id=user, product_id=product)
