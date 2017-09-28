@@ -101,24 +101,24 @@ def index_req(request):
                 form = LoginForm()
                 li = ["Email", "Password"]
                 return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
-        elif "register" in request.POST:
-            print("IN REGISTER FORM SUBMITTED")
-            form = RegisterForm(request.POST)
-            print(form.errors)
-            if form.is_valid():
-                form.save()
-                email_id = form.cleaned_data['email']
-                password = form.cleaned_data['password']
-                username = form.cleaned_data['username']
-                request.session['email'] = email_id
-                request.session['username'] = username
-                list_of_product_dicts = get_products(request)
-                form = UrlForm()
-                return render(request, "index.html",
-                              {"Login": "True", "username": username, "data": list_of_product_dicts,
-                               "form": form})
-            else:
-                return HttpResponse("Invalid Register form")
+        # elif "register" in request.POST:
+        #     print("IN REGISTER FORM SUBMITTED")
+        #     form = RegisterForm(request.POST)
+        #     print(form.errors)
+        #     if form.is_valid():
+        #         form.save()
+        #         email_id = form.cleaned_data['email']
+        #         password = form.cleaned_data['password']
+        #         username = form.cleaned_data['username']
+        #         request.session['email'] = email_id
+        #         request.session['username'] = username
+        #         list_of_product_dicts = get_products(request)
+        #         form = UrlForm()
+        #         return render(request, "index.html",
+        #                       {"Login": "True", "username": username, "data": list_of_product_dicts,
+        #                        "form": form})
+        #     else:
+        #         return HttpResponse("Invalid Register form")
         else:
             form = LoginForm()
             print("BOTH")
@@ -127,11 +127,8 @@ def index_req(request):
     
     else:
         if "email" not in request.session:
-            list_of_product_dicts = get_products(request)
-            form = UrlForm()
-            # print(form)
-            print("REFRESH CALLED")
-            return render(request, "index.html", {"data": list_of_product_dicts, "form": form})
+            print("NOT LOGGED IN, IN INDEX PAGE")
+            return render(request, "index.html")
         else:
             email_id = request.session['email']
             username = request.session['username']

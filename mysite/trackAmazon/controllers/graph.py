@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from ..api.fusioncharts import FusionCharts
 from ..models import *
@@ -39,4 +39,4 @@ def graph(request, id):
         print(column2D)
         return render(request, "graph.html", {'output': column2D.render(), "Login": "True"})
     
-    return HttpResponse("Invalid access")
+    return redirect("/")

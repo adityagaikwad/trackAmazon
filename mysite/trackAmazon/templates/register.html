@@ -7,7 +7,7 @@
 				<h1>Please enter your details below</h1>
 				<hr>
 
-				<form class="form-horizontal" method = "POST" action = "/">
+				<form class="form-horizontal" method = "POST" action = "/register">
 					{% csrf_token %}
 
 					{% for error in form.non_field_errors %}
@@ -16,11 +16,25 @@
 						</div>
 					{% endfor %}
 
+					{% if error == "exists" %}
+						<h4>
+							<span style="color: #ef3434">Email id is already registered to another user</span>
+						</h4>
+					{% endif %}
+
+					{% if error == "password" %}
+						<h4>
+							<span style="color: #ef3434">Both the passwords did not match</span>
+						</h4>
+					{% endif %}
+
 					{% for field, label in data %}
 						<div class="form-group">
 							<label class="control-label col-md-4">{{ label }}:</label>
 							<div class="col-md-4">
+
 								{{ field }}
+
 							</div>
 						</div>
 

@@ -24,7 +24,8 @@ SECRET_KEY = 'q6$)lv#(ctlp5mtb3%s&9iz_1k_e$j08%f5u$2_9a-yc$0dp)w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# remove below comment when debug = False
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -66,6 +67,10 @@ TEMPLATES = [
         },
     },
 
+]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
