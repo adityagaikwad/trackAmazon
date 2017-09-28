@@ -29,7 +29,10 @@ def get_products(request, url=None):
                 AMAZON_ASSOC_TAG = '1015f-21'
                 region = url.split("amazon.")[1].split("/")[0]
                 print(region)
-                ASIN = url.split("/dp/")[1].strip("/").split("/")[0]
+                if "/dp/" in url:
+                    ASIN = url.split("/dp/")[1].strip("/").split("/")[0]
+                elif "/gp/" in url:
+                    ASIN = url.split("/gp/product/")[1].strip("/").split("/")[0]
                 print(ASIN)
                 amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG, region=region.upper())
                 products = amazon.lookup(ItemId=ASIN)

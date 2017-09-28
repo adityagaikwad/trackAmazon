@@ -5,11 +5,54 @@ from .logout import *
 from .get_products import *
 from django.conf import settings
 from django.core.mail import send_mail
+import decimal
 
 
 def index_req(request):
+    
+    # add error field in render if length_old = new length "product already added"
+    
     if request.method == "POST":
-        if "url" in request.POST:
+        if "save" in request.POST:
+            print("TRYING TO ADD PRICE DROP VALUE")
+            if "email" in request.session:
+                # check for drop value when updating graph and send mail
+                # remove mail from here
+                # send_mail('hello', 'hi', settings.EMAIL_HOST_USER, ['gujarshlok@gmail.com'], fail_silently=False)
+                
+                # update price_drop in user_products
+                user = Users.objects.filter(email=request.session["email"])
+                if user.exists():
+                    email_to = request.POST["alert_pref_email"]
+                    print(email_to)
+                    price_drop = request.POST["alert_price"]
+                    print(price_drop)
+                    title = request.POST["hidden-title"]
+                    print(title)
+                    # get title from AJAX
+                    
+                    # title = "Boat Rockerz 400 On-Ear Bluetooth Headphones (Carbon Black)"
+                    product = Product.objects.filter(title=title)
+                    if product.exists():
+                        user_product = User_products.objects.get(user_id=user, product_id=product)
+                        # print(user_product.id)
+                        user_product.price_drop_below = price_drop
+                        user_product.email_to = email_to
+                        user_product.save()
+                        print(user_product.price_drop_below)
+                        print(user_product.email_to)
+                        print("ADDED PRICE DROP VALUE")
+                    
+                    list_of_product_dicts = get_products(request)
+                    form = UrlForm()
+                    email_id = request.session['email']
+                    username = request.session['username']
+                    return render(request, "index.html",
+                                  {"Login": "True", "username": username, "data": list_of_product_dicts, "form": form})
+
+            return HttpResponse("Invalid call to modal")
+
+        elif "url" in request.POST:
             email = request.session["email"]
             # add product to product model and get full dictionary OR update the dict in "IF" part
             print("IN INDEX FORM SUBMITTED")
@@ -27,16 +70,7 @@ def index_req(request):
                               {"Login": "True", "username": username, "data": list_of_product_dicts, "form": form})
             else:
                 return HttpResponse("invalid url")
-        elif "save" in request.POST:
-            form = EmailForm(request.POST)
-            if form.is_valid():
-                email_id = form.cleaned_data["email_id"]
-                price = form.cleaned_data["price"]
-                send_mail('hello', 'hi', settings.EMAIL_HOST_USER, ['gujarshlok@gmail.com'], fail_silently=False)
-                return render(request,"index.html")
-            else:
-                return HttpResponse("invalid")
-
+        
         elif "login" in request.POST:
             print("IN LOGIN FORM SUBMITTED")
             form = LoginForm(request.POST)

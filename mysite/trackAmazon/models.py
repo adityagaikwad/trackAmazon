@@ -45,3 +45,5 @@ class User_products(models.Model):
     price_when_added = models.DecimalField(max_digits=20, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now_add=True, blank=True)
+    price_drop_below = models.DecimalField(max_digits=20, decimal_places=2, null=True)
+    email_to = models.CharField(max_length=50)

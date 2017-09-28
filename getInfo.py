@@ -11,5 +11,6 @@ ASIN = "B01J82IYLW"
 amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG, region = region.upper())
 products = amazon.lookup(ItemId=ASIN)
 price, currency = products.price_and_currency
+print(type(price))
 title = products.title
 print(products.large_image_url)
