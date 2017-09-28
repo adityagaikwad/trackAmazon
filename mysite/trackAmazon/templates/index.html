@@ -128,7 +128,7 @@
 								<div>
 									<span data-toggle="modal"
 									      data-target="#myModal"> <a>Price Drop Notification</a> | </span>
-									<a href="">Price history</a>
+									<a href="{{ product.product_id_id }}">Price history</a>
 								</div>
 							</div>
 						</div>
@@ -193,6 +193,7 @@
                 type: "POST",
                 url: "/",
 	            data: {
+		            "hi": "pop",
 {#                    json_data: JSON.stringify({'product-title': title}),#}
 {#                    'some-form-field': $("myform input:first").val(), // from form#}
 {#                    'background-color': $("body").css("background-color,#}

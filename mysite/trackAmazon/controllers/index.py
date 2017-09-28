@@ -25,6 +25,7 @@ def index_req(request):
                 if user.exists():
                     email_to = request.POST["alert_pref_email"]
                     print(email_to)
+                    print(request.POST)
                     price_drop = request.POST["alert_price"]
                     print(price_drop)
                     title = request.POST["hidden-title"]
