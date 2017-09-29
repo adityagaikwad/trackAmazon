@@ -3,18 +3,14 @@ from django.shortcuts import render
 from ..forms import *
 from ..api.get_products import *
 
+
 def index_req(request):
     
-    # add error field in render if length_old = new length "product already added"
-    
     if request.method == "POST":
+        
         if "save" in request.POST:
             print("TRYING TO ADD PRICE DROP VALUE")
             if "email" in request.session:
-                # check for drop value when updating graph and send mail
-                # remove mail from here
-                # send_mail('hello', 'hi', settings.EMAIL_HOST_USER, ['gujarshlok@gmail.com'], fail_silently=False)
-                
                 # update price_drop in user_products
                 user = Users.objects.filter(email=request.session["email"])
                 if user.exists():
@@ -65,66 +61,6 @@ def index_req(request):
             else:
                 return HttpResponse("invalid url")
         
-        # elif "login" in request.POST:
-        #     print("IN LOGIN FORM SUBMITTED")
-        #     form = LoginForm(request.POST)
-        #
-        #     if form.is_valid():
-        #         email = form.cleaned_data['email']
-        #         print(email)
-        #         password = form.cleaned_data['password']
-        #         try:
-        #             user_obj = Users.objects.get(email=email)
-        #         except:
-        #             form = LoginForm()
-        #             li = ["Email", "Password"]
-        #             return render(request, "login.html", {"error": "register", 'data': zip(form, li)})
-        #         if user_obj:
-        #             username = user_obj.username
-        #             if user_obj.password == password:
-        #                 print(username)
-        #                 email_id = user_obj.email
-        #                 form = UrlForm()
-        #                 print("PROPER LOADING")
-        #                 request.session['email'] = email_id
-        #                 request.session['username'] = username
-        #                 list_of_product_dicts = get_products(request)
-        #                 return render(request, "index.html",
-        #                               {"Login": "True", "username": username, "data": list_of_product_dicts,
-        #                                "form": form})
-        #             else:
-        #                 print("Password")
-        #                 form = LoginForm()
-        #                 li = ["Email", "Password"]
-        #                 return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
-        #     else:
-        #         form = LoginForm()
-        #         li = ["Email", "Password"]
-        #         return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
-        # elif "register" in request.POST:
-        #     print("IN REGISTER FORM SUBMITTED")
-        #     form = RegisterForm(request.POST)
-        #     print(form.errors)
-        #     if form.is_valid():
-        #         form.save()
-        #         email_id = form.cleaned_data['email']
-        #         password = form.cleaned_data['password']
-        #         username = form.cleaned_data['username']
-        #         request.session['email'] = email_id
-        #         request.session['username'] = username
-        #         list_of_product_dicts = get_products(request)
-        #         form = UrlForm()
-        #         return render(request, "index.html",
-        #                       {"Login": "True", "username": username, "data": list_of_product_dicts,
-        #                        "form": form})
-        #     else:
-        #         return HttpResponse("Invalid Register form")
-        else:
-            form = LoginForm()
-            print("BOTH")
-            li = ["Email", "Password"]
-            return render(request, "login.html", {"error": "both", 'data': zip(form, li)})
-    
     else:
         if "email" not in request.session:
             print("NOT LOGGED IN, IN INDEX PAGE")

@@ -17,7 +17,7 @@ def register(request):
                 username = form.cleaned_data['username']
                 password2 = form.cleaned_data['password2']
                 print(password)
-                print(password2)
+                # print(password2)
                 if check_password(password2, password):
                     # hashed_pwd = make_password(password)
                     # form.cleaned_data['password'] = hashed_pwd
