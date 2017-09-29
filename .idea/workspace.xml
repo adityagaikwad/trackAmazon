@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de5fe293-69fc-4ddb-8b77-003cb4a6845b" name="Default" comment="Images for devs left to add">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/font-awesome/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/font-awesome/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/css/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/js/bootstrap/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/js/bootstrap/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/js/bootstrap/npm.js" />
+    <list default="true" id="de5fe293-69fc-4ddb-8b77-003cb4a6845b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/images/adityagaikwad.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/images/copy.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mysite/trackAmazon/static/images/shlok1.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/db.sqlite3" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/controllers/graph.py" afterPath="$PROJECT_DIR$/mysite/trackAmazon/controllers/graph.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/controllers/index.py" afterPath="$PROJECT_DIR$/mysite/trackAmazon/controllers/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/controllers/register.py" afterPath="$PROJECT_DIR$/mysite/trackAmazon/controllers/register.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/forms.py" afterPath="$PROJECT_DIR$/mysite/trackAmazon/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/templates/base.html" afterPath="$PROJECT_DIR$/mysite/trackAmazon/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/templates/contact.html" afterPath="$PROJECT_DIR$/mysite/trackAmazon/templates/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/templates/register.html" afterPath="$PROJECT_DIR$/mysite/trackAmazon/templates/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/trackAmazon/templates/works.html" afterPath="$PROJECT_DIR$/mysite/trackAmazon/templates/works.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,68 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/models.py">
+      <file leaf-file-name="register.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/register.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/index.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="graph.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/graph.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/contact.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="40" column="170" lean-forward="false" selection-start-line="40" selection-start-column="170" selection-end-line="40" selection-end-column="170" />
-              <folding>
-                <element signature="e#706#712#0#HTML" expanded="true" />
-                <element signature="e#712#718#0#HTML" expanded="true" />
-                <element signature="e#853#859#0#HTML" expanded="true" />
-                <element signature="e#859#865#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2142">
-              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -169,7 +94,6 @@
         <option value="$PROJECT_DIR$/mysite/trackAmazon/controllers/login.py" />
         <option value="$PROJECT_DIR$/mysite/trackAmazon/migrations/0003_auto_20170923_0837.py" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/mysite/trackAmazon/templates/works.html" />
         <option value="$PROJECT_DIR$/mysite/trackAmazon/controllers/logout.py" />
         <option value="$PROJECT_DIR$/mysite/trackAmazon/controllers/works.py" />
         <option value="$PROJECT_DIR$/mysite/trackAmazon/templates/login.html" />
@@ -189,6 +113,7 @@
         <option value="$PROJECT_DIR$/mysite/trackAmazon/controllers/graph.py" />
         <option value="$PROJECT_DIR$/mysite/mysite/settings.py" />
         <option value="$PROJECT_DIR$/mysite/trackAmazon/templates/base.html" />
+        <option value="$PROJECT_DIR$/mysite/trackAmazon/templates/works.html" />
         <option value="$PROJECT_DIR$/mysite/trackAmazon/templates/contact.html" />
       </list>
     </option>
@@ -239,12 +164,6 @@
               <item name="trackAmazon" type="b2602c69:ProjectViewProjectNode" />
               <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trackAmazon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -259,7 +178,16 @@
               <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trackAmazon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="trackAmazon" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,9 +197,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysite/trackAmazon/static/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="SearchEverywhereHistoryKey" value="s&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/mysite/settings.py&#10;bas&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/base.html&#10;form&#9;null&#9;null&#10;lo&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/login.html&#10;inde&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/index.html&#10;re&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/register.html&#10;reg&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/controllers/register.py&#10;in&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/index.html&#10;ind&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/index.html&#10;mode&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/models.py&#10;mo&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/models.py&#10;log&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/login.html&#10;ge&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/controllers/get_products.py&#10;sett&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/trackAmazon/mysite/mysite/settings.py&#10;index&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/trackAmazon/mysite/trackAmazon/templates/index.html&#10;models&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/trackAmazon/mysite/trackAmazon/models.py&#10;urls&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/trackAmazon/mysite/trackAmazon/urls.py&#10;workspace.xml&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/trackAmazon/.idea/workspace.xml" />
+    <property name="SearchEverywhereHistoryKey" value="re&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/controllers/register.py&#10;bas&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/base.html&#10;works&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/works.html&#10;gra&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/controllers/graph.py&#10;up&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/api/update_products.py&#10;mode&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/models.py&#10;get&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/api/get_products.py&#10;con&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/contact.html&#10;reg&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/controllers/register.py&#10;s&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/mysite/settings.py&#10;form&#9;null&#9;null&#10;lo&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/login.html&#10;inde&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/index.html&#10;in&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/index.html&#10;ind&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/index.html&#10;mo&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/models.py&#10;log&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/templates/login.html&#10;ge&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/TEST/trackAmazon/mysite/trackAmazon/controllers/get_products.py&#10;sett&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/trackAmazon/mysite/mysite/settings.py&#10;index&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/trackAmazon/mysite/trackAmazon/templates/index.html&#10;models&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/NEW SITE/trackAmazon/mysite/trackAmazon/models.py&#10;urls&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/trackAmazon/mysite/trackAmazon/urls.py&#10;workspace.xml&#9;FILE&#9;file://C:/Users/HP/Documents/College files/Sem 5/WT/Project/trackAmazon/.idea/workspace.xml" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -282,11 +210,11 @@
       <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\trackAmazon\mysite\trackAmazon" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\NEW SITE\TEST\trackAmazon\mysite\trackAmazon\static\images" />
       <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\NEW SITE\TEST\trackAmazon\mysite\trackAmazon\static\css\fonts" />
       <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\NEW SITE\TEST\trackAmazon\mysite\trackAmazon\static\css\font-awesome" />
       <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\NEW SITE\TEST\trackAmazon\mysite\trackAmazon\static\js\bootstrap" />
       <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\NEW SITE\TEST\trackAmazon\mysite\trackAmazon\static" />
-      <recent name="C:\Users\HP\Documents\College files\Sem 5\WT\Project\NEW SITE\TEST\trackAmazon\mysite\trackAmazon\api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -481,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506602244252</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Images for devs left to add">
+      <created>1506615633280</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1506615633280</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -495,14 +430,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3502455" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.204236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20045386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -625,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="605" column="16" lean-forward="false" selection-start-line="605" selection-start-column="16" selection-end-line="605" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -677,15 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/works.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -693,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="126" column="470" lean-forward="false" selection-start-line="126" selection-start-column="470" selection-end-line="126" selection-end-column="470" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="44" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,55 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/fusioncharts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/contact.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="124" column="31" lean-forward="false" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/update_products.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/get_products.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +692,7 @@
         <state relative-caret-position="319">
           <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
-            <element signature="e#779#801#0#HTML" expanded="true" />
+            <element signature="e#779#801#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -824,63 +701,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/register.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#517#539#0#HTML" expanded="true" />
-            <element signature="e#682#704#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/static/css/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/static/js/bootstrap/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,15 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,20 +723,113 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="1576" column="21" lean-forward="true" selection-start-line="1576" selection-start-column="21" selection-end-line="1576" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/contact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/update_products.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/get_products.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="113" column="24" lean-forward="false" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/api/fusioncharts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1961">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="40" column="170" lean-forward="false" selection-start-line="40" selection-start-column="170" selection-end-line="40" selection-end-column="170" />
-          <folding>
-            <element signature="e#706#712#0#HTML" expanded="true" />
-            <element signature="e#712#718#0#HTML" expanded="true" />
-            <element signature="e#853#859#0#HTML" expanded="true" />
-            <element signature="e#859#865#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/templates/works.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/trackAmazon/controllers/register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
