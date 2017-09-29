@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+from django.contrib.auth.hashers import make_password
 
 
 class UrlForm(forms.Form):
@@ -19,3 +20,10 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model = Users
         fields = ['username', 'email', 'password']
+
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        # crypt stuff
+        hashed_pwd = make_password(password)
+        return hashed_pwd
+    

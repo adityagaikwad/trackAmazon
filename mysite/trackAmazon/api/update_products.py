@@ -1,9 +1,12 @@
 import threading
 from amazon.api import AmazonAPI
 from django.core.mail import send_mail
-from .settings import *
+# from .settings import *
 from ..models import *
 from datetime import datetime
+
+
+EMAIL_HOST_USER = 'trackamazonservice@gmail.com'
 
 
 def update_product(product):

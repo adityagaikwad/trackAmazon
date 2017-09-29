@@ -65,42 +65,42 @@ def index_req(request):
             else:
                 return HttpResponse("invalid url")
         
-        elif "login" in request.POST:
-            print("IN LOGIN FORM SUBMITTED")
-            form = LoginForm(request.POST)
-
-            if form.is_valid():
-                email = form.cleaned_data['email']
-                print(email)
-                password = form.cleaned_data['password']
-                try:
-                    user_obj = Users.objects.get(email=email)
-                except:
-                    form = LoginForm()
-                    li = ["Email", "Password"]
-                    return render(request, "login.html", {"error": "register", 'data': zip(form, li)})
-                if user_obj:
-                    username = user_obj.username
-                    if user_obj.password == password:
-                        print(username)
-                        email_id = user_obj.email
-                        form = UrlForm()
-                        print("PROPER LOADING")
-                        request.session['email'] = email_id
-                        request.session['username'] = username
-                        list_of_product_dicts = get_products(request)
-                        return render(request, "index.html",
-                                      {"Login": "True", "username": username, "data": list_of_product_dicts,
-                                       "form": form})
-                    else:
-                        print("Password")
-                        form = LoginForm()
-                        li = ["Email", "Password"]
-                        return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
-            else:
-                form = LoginForm()
-                li = ["Email", "Password"]
-                return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
+        # elif "login" in request.POST:
+        #     print("IN LOGIN FORM SUBMITTED")
+        #     form = LoginForm(request.POST)
+        #
+        #     if form.is_valid():
+        #         email = form.cleaned_data['email']
+        #         print(email)
+        #         password = form.cleaned_data['password']
+        #         try:
+        #             user_obj = Users.objects.get(email=email)
+        #         except:
+        #             form = LoginForm()
+        #             li = ["Email", "Password"]
+        #             return render(request, "login.html", {"error": "register", 'data': zip(form, li)})
+        #         if user_obj:
+        #             username = user_obj.username
+        #             if user_obj.password == password:
+        #                 print(username)
+        #                 email_id = user_obj.email
+        #                 form = UrlForm()
+        #                 print("PROPER LOADING")
+        #                 request.session['email'] = email_id
+        #                 request.session['username'] = username
+        #                 list_of_product_dicts = get_products(request)
+        #                 return render(request, "index.html",
+        #                               {"Login": "True", "username": username, "data": list_of_product_dicts,
+        #                                "form": form})
+        #             else:
+        #                 print("Password")
+        #                 form = LoginForm()
+        #                 li = ["Email", "Password"]
+        #                 return render(request, "login.html", {"error": "password", 'data': zip(form, li)})
+        #     else:
+        #         form = LoginForm()
+        #         li = ["Email", "Password"]
+        #         return render(request, "login.html", {"error": "email", 'data': zip(form, li)})
         # elif "register" in request.POST:
         #     print("IN REGISTER FORM SUBMITTED")
         #     form = RegisterForm(request.POST)
