@@ -1,0 +1,8 @@
+-f /usr/share/pip-wheels
+bottlenose==1.1.8
+Django==2.1
+lxml==4.2.4
+python-amazon-simple-product-api==2.2.11
+python-dateutil==2.7.3
+pytz==2018.5
+six==1.11.0

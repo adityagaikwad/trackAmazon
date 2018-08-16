@@ -25,7 +25,7 @@ SECRET_KEY = 'q6$)lv#(ctlp5mtb3%s&9iz_1k_e$j08%f5u$2_9a-yc$0dp)w'
 DEBUG = True
 
 # remove below comment when debug = False
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
